@@ -1,0 +1,38 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 2%;
+    box-shadow: 10px 5px 100px #000;
+    
+}
+
+.form-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-input input{
+    margin-left:5px ;
+    border: 1px solid rgb(64,65, 61) ;
+    font-family: 12px;
+    outline: none;
+    border-radius: 5px ;
+    margin: 10px;
+}
+
+.form-input select{
+    margin-left:5px ;
+    border: 1px solid rgb(64,65, 61) ;
+    font-family: 12px;
+    outline: none;
+    border-radius: 5px ;
+    margin: 10px;
+}
+
+
+
