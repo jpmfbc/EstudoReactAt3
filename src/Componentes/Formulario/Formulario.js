@@ -18,6 +18,7 @@ const Formulario = ({...props}) =>{
                 <label>Nota</label>
                 <input  type="number" min="1" max="10" step="1" />
            </div>
+           <button className="botao" type="submit">Enviar</button>
         </form>
     )
 }
