@@ -4,38 +4,72 @@ import Cabecalho from './Componentes/Cabecalho/Cabecalho.js';
 import Rodape from './Componentes/Rodape/Rodape.js';
 import Jogos from './Componentes/Jogos/Jogos.js';
 import Formulario from './Componentes/Formulario/Formulario.js';
+import { useState,useEffect } from 'react';
 function App() {
-  const jogos = [
-    {
-       Nome:"Mario",
-       Nota:9,
-       Imagem:"https://m.media-amazon.com/images/I/813JPZr+pCL._AC_UY218_.jpg" 
-    },
-    {
-        Nome:"Chrono Trigger",
-        Nota:10,
-        Imagem:"https://m.media-amazon.com/images/I/51RRfBwQAoL._AC_UY218_.jpg" 
-     },
-     {
-        Nome:"Dragon Age",
-        Nota:9,
-        Imagem:"https://m.media-amazon.com/images/I/61X7vDugswL._AC_UY218_.jpg" 
-     },
-     {
-        Nome:"Devil May Cry",
-        Nota:8,
-        Imagem:"https://m.media-amazon.com/images/I/71eaiCcevRS._AC_UY218_.jpg" 
-     }]
+  
+
+     const [jogos,setJogos] = useState([]);
+    
+    
+     const [formCampos, setFormCampos] = useState({
+       Nome: "",
+       Nota: 0,
+       Imagem: ""
+     });
+ 
+     useEffect(()=>{
+      getJogos()
+     },[]);
+     
+     
+       // Função para lidar com mudanças nos campos do formulário
+       function handleCampos(event) {
+         setFormCampos({
+           ...formCampos,            // Mantenha os outros campos
+           [event.target.name]: event.target.value  // Atualize o campo que mudou
+         });
+       }
+     
+       const handleClick = async () => {
+        const response = await fetch('http://localhost:3005/jogos',{
+           method:'POST',
+           headers: new Headers({
+             "Content-type":"application/json"
+           }),
+           body: JSON.stringify(formCampos)
+         })
+ 
+         const data= await response.json();
+ 
+         alert(`jogo ${data.Nome} cadastradro com sucesso`)
+         
+         getJogos();
+         
+        setFormCampos({
+          Nome: "",
+          Nota: 0,
+          Imagem: ""
+        })
+           
+       }
+ 
+       const getJogos = async () =>{
+         var response = await fetch('http://localhost:3005/jogos');
+         var data= await response.json()
+        setJogos(data);
+         
+       }
+ 
 
   return (
     <>
       <Cabecalho />
       <div className='Conteudo'>
-      <Jogos jogos={jogos} />
       <section className='form-contato'> 
-        <h2>De sua nota para o jogo</h2>
-        <Formulario jogos={jogos} />
+        <h2>Cadastre novo jogo</h2>
+        <Formulario handleCampos={handleCampos} formCampos={formCampos} handleClick={handleClick} />
       </section>
+      <Jogos jogos={jogos} />
       </div>
       <Rodape />
     </>

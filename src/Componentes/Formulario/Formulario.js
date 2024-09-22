@@ -1,25 +1,34 @@
 import "./Formulario.css"
+import Botao from '../Botao/Botao.js'
+import FormInput from '../FormInput/FormInput.js'
 
 const Formulario = ({...props}) =>{
+    
     return(
-        <form className="form">
-           <div className="form-input">
-                <label>Jogo</label>
-                <select>
-                {
-                    props.jogos.map((jogo) =>
-                    (
-                        <option>{jogo.Nome}</option>
-                    ))
-                } 
-                </select>
-           </div>
-           <div className="form-input"> 
-                <label>Nota</label>
-                <input  type="number" min="1" max="10" step="1" />
-           </div>
-           <button className="botao" type="submit">Enviar</button>
-        </form>
+    <form className="form">
+      <FormInput
+        texto="Nome"
+        id="Nome"
+        tipo="text"
+        value={props.formCampos.Nome}  // Estado controlado para o nome
+        onChange={props.handleCampos}  // Atualiza o estado quando o valor mudar
+      />
+      <FormInput
+        texto="Nota"
+        id="Nota"
+        tipo="number"
+        value={props.formCampos.Nota}   // Estado controlado para o ano
+        onChange={props.handleCampos}  // Atualiza o estado quando o valor mudar
+      />
+      <FormInput
+        texto="Imagem"
+        id="Imagem"
+        tipo="text"
+        value={props.formCampos.Imagem}  // Estado controlado para o poster
+        onChange={props.handleCampos}    // Atualiza o estado quando o valor mudar
+      />
+     <Botao texto="Enviar" tipo="submit" onClick={props.handleClick} />
+    </form>
     )
 }
 

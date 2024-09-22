@@ -9,11 +9,15 @@
 .jogos h2{
     margin-bottom: 20px;
 }
-.jogos-lista{
+.jogos-lista {
     width: 90%;
     margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
     list-style: none;
-} 
+}
+
+.jogos-lista li {
+    flex: 1 1 calc(25% - 10px); /* Faz cada item ocupar um quarto da linha */
+    margin-bottom: 10px; /* Adiciona espaço abaixo dos itens */
+}
