@@ -2,8 +2,8 @@
   "jogos": [
     {
       "id": "0",
-      "nome": "Mario",
-      "nota": 9,
+      "Nome": "Mario",
+      "Nota": "9",
       "Imagem": "https://m.media-amazon.com/images/I/813JPZr+pCL._AC_UY218_.jpg"
     },
     {
@@ -21,14 +21,8 @@
     {
       "id": "3",
       "Nome": "Devil May Cry",
-      "Nota": 8,
+      "Nota": "8",
       "Imagem": "https://m.media-amazon.com/images/I/71eaiCcevRS._AC_UY218_.jpg"
-    },
-    {
-      "id": "b5e2",
-      "Nome": "sonic",
-      "Nota": 7,
-      "Imagem": "https://m.media-amazon.com/images/I/619mg6uGj-L._AC_UY218_.jpg"
     },
     {
       "id": "40b8",
@@ -37,22 +31,22 @@
       "Imagem": "https://m.media-amazon.com/images/I/618GR0WMoQL._AC_UY218_.jpg"
     },
     {
-      "id": "a6e4",
-      "Nome": "principe da persia",
-      "Nota": 0,
-      "Imagem": "https://m.media-amazon.com/images/I/61Oa81hySML._AC_UY218_.jpg"
-    },
-    {
-      "id": "881e",
-      "Nome": "GTA",
-      "Nota": "7",
-      "Imagem": "https://m.media-amazon.com/images/I/81nBUb2qNKL._AC_UY218_.jpg"
-    },
-    {
       "id": "9353",
       "Nome": "God of war",
       "Nota": "8",
       "Imagem": "https://m.media-amazon.com/images/I/81TBqOBJatL.AC_UY218_.jpg"
+    },
+    {
+      "id": "01ab",
+      "Nome": "gears of war",
+      "Nota": "9",
+      "Imagem": "https://m.media-amazon.com/images/I/51ywAKKPakL._AC_UY218_.jpg"
+    },
+    {
+      "id": "fad1",
+      "Nome": "homem aranha",
+      "Nota": "9",
+      "Imagem": "https://m.media-amazon.com/images/I/815TEngwF7L._AC_UY218_.jpg"
     }
   ]
 }

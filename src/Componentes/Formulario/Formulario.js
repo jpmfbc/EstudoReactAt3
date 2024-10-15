@@ -5,7 +5,9 @@ import FormInput from '../FormInput/FormInput.js'
 const Formulario = ({...props}) =>{
     
     return(
-    <form className="form">
+    <>
+    <div  hidden={props.div1}> 
+      <form className="form">
       <FormInput
         texto="Nome"
         id="Nome"
@@ -28,7 +30,34 @@ const Formulario = ({...props}) =>{
         onChange={props.handleCampos}    // Atualiza o estado quando o valor mudar
       />
      <Botao texto="Enviar" tipo="submit" onClick={props.handleClick} />
+     </form>
+     </div>
+    <div hidden={props.div2}>
+      <form className="form">
+          <div className="form-input">
+            <label>Jogo:</label>
+            <select id="id"
+            value={props.formCampos.id}
+            name="id" 
+            onChange={props.handleCampos}>
+            {
+              props.jogos.map((jogo) =>(
+                <option key={jogo.id} value={jogo.id}>{jogo.Nome}</option>
+              ))
+            }
+          </select>
+          </div>
+          <FormInput
+            texto="Nota"
+            id="Nota"
+            tipo="number"
+            value={props.formCampos.Nota}   // Estado controlado para o ano
+            onChange={props.handleCampos}  // Atualiza o estado quando o valor mudar
+          />
+          <Botao texto="Alterar Nota" tipo="submit" onClick={props.handleClick} />
     </form>
+    </div>
+    </>
     )
 }
 

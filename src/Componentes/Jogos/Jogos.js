@@ -1,6 +1,10 @@
 import "./Jogos.css";
 import Jogo from "../Jogo/Jogo";
+
+
+
 const Jogos = ({...props}) => {
+    
     return (
         <section className="jogos">
             <h2>Jogos Da Galeria</h2>
@@ -8,7 +12,13 @@ const Jogos = ({...props}) => {
             {
                 props.jogos.map((jogo) =>
                 (
-                    <Jogo nome={jogo.Nome} nota={jogo.Nota} imagem={jogo.Imagem}  />
+                    <Jogo 
+                    nome={jogo.Nome} 
+                    nota={jogo.Nota} 
+                    imagem={jogo.Imagem} 
+                    handleClick={props.handleClick}
+                    id={jogo.id}
+                      />
                 ))
             } 
             </ul>

@@ -1,4 +1,6 @@
 import "./Jogo.css"
+import "../Botao/Botao.js"
+import Botao from "../Botao/Botao.js";
 
 const Jogo = ({...props}) =>{
     return(
@@ -6,6 +8,13 @@ const Jogo = ({...props}) =>{
             <img src={props.imagem}></img>
             <p>Nome:{props.nome} </p>
             <p>Nota: {props.nota}</p>
+            <p>
+                <Botao 
+                    texto="Eliminar" 
+                    tipo="button" 
+                    onClick={() => props.handleClick(props.id)}
+                />
+            </p>
         </li>
     )
 }
